@@ -1,0 +1,19 @@
+<style>
+#annee{
+    margin-left:50%;
+     
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 40px;
+            letter-spacing: normal;
+            justify-content: right; 
+}
+</style>
+
+{{ form_start(form) }}
+<div id="annee">
+{{form_label(form.annee,'عام')}}
+</div>
+{{form_widget(form.annee)}}<br><br>
+    <button class="btn btn-success">{{ button_label|default('إضافة عام جديد') }}</button>
+{{ form_end(form) }}

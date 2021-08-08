@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Date{% endblock %}
+
+{% block body %}
+<style> 
+#annee1{
+    margin-left:70%;
+     
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 40px;
+            letter-spacing: normal;
+            justify-content: right; 
+}   
+body{
+      background-repeat: no-repeat;
+      background-position:right;
+      background-size: 50%;
+      background-image:url("../assets/img/portfolio/portfolio-3.jpg");
+      
+  background-attachment: fixed;
+}
+   </style>
+    <h1 id="annee1">إضافة عام جديد</h1>
+
+    {{ include('date/_form.html.twig') }}
+
+{% endblock %}

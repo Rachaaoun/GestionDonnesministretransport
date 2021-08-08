@@ -1,0 +1,104 @@
+
+{% extends 'base.html.twig'  %}
+
+{% block body %}
+    <style>
+        table{
+            alignment: right;
+            text-align: right;
+            height: 100px;
+
+        }
+        td{
+            width: 250px;
+            font-size: 25px;
+        }
+        h2{
+            text-align: center;
+        }
+        h3{
+            text-align: right;
+        }
+        #titre1{
+            text-align: right;
+        }
+        #signature{
+            text-align: left;
+        }
+    </style>
+
+{{ form_start(form) }}
+    <p id="titre1">الجمهورية التونسية
+        رئاسة الحكومة
+    </p>
+    <br>
+
+    <h2>نموذج الملحق عدد 5</h2><br>
+    <h2>بطاقة بيانات حول الصفقات التي تمّ عرضها وإسنادها خلال الثلاثية الأولى من سنة  {{ dateannee }}</h2><br>
+    <h2>(بما في ذلك الصفقات المبرمة في إطار الإجراءات المبسّطة)</h2><br><br>
+
+    <h3>المشتري العمومي: شركة النقل بتونس</h3><br>
+    <h3>{{form_widget(form.varfinal)}} : إسم المسؤول عن خلية الصفقات العمومية ولقبه</h3><br>
+    <h3>:الهاتف: 71904858 الفاكس: 71904871 العنوان الإلكتروني </h3><br><br><br>
+
+   <table class="table" border=" 4px solid">
+    <thead>
+    <tr>
+        <td rowspan="2">عدد مشاريع الختم النهائي</td>
+        <td colspan="2">مشاريع ملاحق الصفقات</td>
+        <td colspan="2">مشاريع الصفقات بالتفاوض المباشر</td>
+        <td rowspan="2">عدد تقارير الإنتقاء الأوّلي</td>
+        <td colspan="2">تقارير تقييم العروض</td>
+        <td rowspan="2">صنف الطلبات</td>
+
+    </tr>
+    <tr>
+        <td colspan="1">العدد</td>
+        <td colspan="1" >المبلغ الجملي(د)</td>
+        <td colspan="1">العدد</td>
+        <td colspan="1" >المبلغ الجملي(د)</td>
+        <td colspan="1">العدد</td>
+        <td colspan="1" >المبلغ الجملي(د)</td>
+    </tr>
+
+    </thead>
+    <tbody>
+
+    {{ form_start(form) }}
+
+    <td>{{ form_widget(form.nombreprojetfinaux) }}</td>
+
+
+
+
+    <td>{{ form_widget(form.totalprojet) }}</td>
+    <td>{{ form_widget(form.nombreprojet) }}</td>
+
+
+    <td>{{ form_widget(form.totalaccord) }}</td>
+    <td>{{ form_widget(form.nombreaccord) }}</td>
+    <td>{{ form_widget(form.nombrerapportpreselection )}}</td>
+    <td>{{ form_widget(form.totalrapport) }}</td>
+    <td>{{ form_widget(form.nombrerapport) }}</td>
+
+
+    <td>{{ form_widget(form.classementdemande) }}</td>
+
+    <button class="btn btn-primary">{{ button_label|default('موافقة الإضافة') }}</button> <br>
+  
+    </tbody>
+</table>
+
+  
+
+
+    <br>
+
+
+    <h2 id="signature">الإمضاء<br>
+        مدير إدارة كتابة لجان الصفقات
+        <br>ومراقبة المصاريف<br>
+        
+    </h2>
+{{ form_end(form) }}
+{% endblock %}

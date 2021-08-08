@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+
+<style>
+h1{
+    margin-left:30%;
+}
+</style>
+<br><br>
+<h1 style="text-align:center">الــمــصــادقــة عــلى الــصــفقـات ذات الإجراءات المبسطة</h1>
+<br><br>
+  
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/photoprincipal.PNG">
+        <title></title>
+        <!-- Custom CSS -->
+        <link href="../dist/css/style.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
+         style="background:url(/../assets/images/big/auth-bg.jpg) no-repeat center center;">
+        <div class="auth-box row">
+            <div class="col-lg-7 col-lg-6 modal-bg-img"
+                 style="background-image: url(../assets/images/photoprincipal.PNG);">
+            </div>
+            <div class="bg-white">
+                
+
+    {{ include('tab_ca_simple/_form.html.twig') }}
+               <br><br>
+
+            </div>
+
+            {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Remember me
+                </label>
+            </div>
+            #}
+
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js "></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js "></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <script>
+        $(".preloader ").fadeOut();
+    </script>
+
+{% endblock %}

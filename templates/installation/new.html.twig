@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+   <h1 style="margin-left:60%">عدد الأقساط	</h1>
+
+    <table class="table">
+        <tbody>
+           <th>قسط عدد</th>
+      <th>مبلغ</th>
+      <th>Fournisseur</th>
+      <th>ملاحضات</th>
+                {% for installation in insta %}
+                 <tr>
+               <td>{{ installation.numero }}</td>
+                <td>{{ installation.montant }}</td>
+                 <td>{{ installation.fournisseur }}</td>
+                  <td>{{ installation.description }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+    {{ include('installation/_form.html.twig') }}
+
+{% endblock %}

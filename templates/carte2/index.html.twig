@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}بطاقة بيانات {% endblock %}
+
+{% block body %}
+<style>
+#titre
+{
+      text-align: center;
+}
+</style>
+
+    <h1 id="titre">بطاقة بيانات </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>   عدد </th>
+                <th >بطاقة بيانات </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carte2 in carte2s %}
+            <tr>
+                <td>{{ carte2.id }}</td>
+                <td>{{ carte2.cartedate }}</td>
+                <td>
+                    <a href="{{ path('carte2_show', {'id': carte2.id}) }}">=></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('carte2_new', {'id': id})  }}">إضافة</a>
+{% endblock %}

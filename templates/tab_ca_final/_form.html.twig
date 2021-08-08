@@ -1,0 +1,69 @@
+<style>
+#id1{
+margin-left:40%
+}
+</style>
+
+<div class="container">
+{{ form_start(form) }}
+ <div class="form-control form-control-lg">
+<div id="id1">
+    {{ form_label(form.avisConseil,'رأي مجلس الإدارة') }}</div>
+ {{ form_widget(form.avisConseil) }}
+     </div>
+   <br> 
+    <div class="form-control form-control-lg">
+    <div id="id1">
+    {{ form_label(form.avisCommission,'رأي اللـجـنـة الداخلية لمراقبة الـصـفـقـات') }}</div>
+      {{ form_widget(form.avisCommission) }}
+   </div>
+<br>
+ <div class="form-control form-control-lg">
+ <div id="id1">
+    {{ form_label(form.dateConfirmation,' تـاريخ
+                    الجلـسة ') }}
+    </div>
+       {{ form_widget(form.dateConfirmation) }}
+</div>
+      <br>
+       <div class="form-control form-control-lg">
+      <div id="id1">
+    {{ form_label(form.validiteGarentiePresentation,'صلوحية الضمان والعرض') }}</div>
+      {{ form_widget(form.validiteGarentiePresentation) }}
+       </div>
+<br>
+        <div class="form-control form-control-lg">
+<div id="id1">
+    {{ form_label(form.montantTransaction,'المبلغ') }}</div>
+       {{ form_widget(form.montantTransaction) }} 
+       </div>
+         
+<br>
+ <div class="form-control form-control-lg">
+ <div id="id1">
+    {{ form_label(form.proprietaireAccord,'صـاحب الصـفقـة') }} </div>
+            {{ form_widget(form.proprietaireAccord) }}
+       
+</div>
+    <br>     
+     <div class="form-control form-control-lg">
+     <div id="id1">
+    {{ form_label(form.document,'  الــمــلــف') }}</div>
+      {{ form_widget(form.document) }} 
+         </div>
+           <br><br>
+    <button class="btn btn-success">{{ button_label|default('+ إضافة') }}</button>
+{{ form_end(form) }}
+
+{#                 
+                <td>{{ tab_c_a.avisConseil }}</td>
+                <td>{{ tab_c_a.avisCommission }}</td>
+                <td>{{ tab_c_a.dateConfirmation }}</td>
+                 <td>{{ tab_c_a.validiteGarentiePresentation }}</td>
+                <td>{{ tab_c_a.budgetAlloue }}</td>
+                <td>{{ tab_c_a.montantTransaction }}</td>
+                <td>{{ tab_c_a.proprietaireAccord }}</td>
+                
+                       <td>{{ tab_c_a.document }}</td>
+                  <td>{{ tab_c_a.id }}</td> #}
+                  </div>

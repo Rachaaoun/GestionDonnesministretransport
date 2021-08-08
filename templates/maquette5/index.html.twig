@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Maquette2 index{% endblock %}
+
+{% block body %}
+    <h1>Maquette2 index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>اليوم</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for maquette3 in maquette5s %}
+            <tr>
+                <td>{{ maquette3.id }}</td>
+                <td>{{ maquette3.date1 }}</td>
+                <td>
+                    <a href="{{ path('maquette5_show', {'id': maquette3.id}) }}">=></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('maquette5_new',{'id':id}) }}">إضافة</a>
+{% endblock %}

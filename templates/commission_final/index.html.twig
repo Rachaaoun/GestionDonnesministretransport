@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CommissionFinal index{% endblock %}
+
+{% block body %}
+
+<style>
+h1{
+     text-align :center;
+            align-content: space-between;
+            word-spacing: 10px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 20px;
+            font-family: "Times New Roman";
+}
+#titre1{
+    text-align :right;
+            align-content: space-between;
+            word-spacing: 10px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 20px;
+            font-family: "Times New Roman";
+}
+
+#titre2{
+    text-align :center;
+            align-content: space-between;
+            word-spacing: 10px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 20px;
+            font-family: "Times New Roman";
+}
+
+
+#soustitre1,#choix1{
+    text-align :right;
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 10px;
+            font-family: "Times New Roman";
+}
+
+#soustitre2{
+    text-align :right;
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 15px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 10px;
+            font-family: "Times New Roman";
+}
+td,th,tr /* Toutes les cellules des tableaux... */
+{
+    
+   text-align:right;
+
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            
+            font-family: "Times New Roman";
+    border: 1px solid black; /* auront une bordure de 1px */
+}
+table{
+      text-align :right;
+            
+}
+input{
+    border-color:white;
+}
+</style>
+<br><br><br>
+<h1>أعمال لجنة الختم النهائي</h1>
+<br><br>
+    <table class="table">
+        <thead>
+            <tr>
+               
+                <td>موضوع الصفقة </td>
+<td> تاريخ إبرام الصفقة</td>
+<td>صاحب الصفقة</td>
+<td>عددالصفقة</td>
+<td> عدد طلب العروض</td>
+<td>تاريخ موافقة اللجنة الداخلية لمراقبة الصفقات</td>
+<td>تاريخ موافقة مجلس الادارة </td>
+<td> تاريخ امضاء الصفقة </td>
+<td>المبلغ الاصلي للصفقة </td>
+<td>مبلغ الضمان النهائي </td>
+<td> أجال التنفيذ التعاقدي</td>
+<td>تاريخ الاستلام الفعلي</td>
+<td> تاريخ الاستلام النهائي</td>
+ <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commission_final in commission_finals %}
+            <tr>
+                <th>{{form_widget(form.var1)}}</th>
+<th>{{commission_final.var2}}</th>
+<th>{{commission_final.var3}}</th>
+<th>{{commission_final.var4}}</th>
+<th>{{commission_final.var5}}</th>
+<th>{{commission_final.var6}}</th>
+<th>{{commission_final.var7}}</th>
+<th>{{commission_final.var8}}</th>
+<th>{{commission_final.var9}}</th>
+<th>{{commission_final.var10}}</th>
+<th>{{commission_final.var11}}</th>
+<th>{{commission_final.var12}}</th>
+<th>{{commission_final.var13}}</th>
+
+                <td>{{ commission_final.id }}</td>
+                <td>
+                    <a href="{{ path('commission_final_show', {'id': commission_final.id}) }}">=></a>
+                    <a href="{{ path('commission_final_edit', {'id': commission_final.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('commission_final_new',{'id': id}) }}">إضافة</a>
+{% endblock %}

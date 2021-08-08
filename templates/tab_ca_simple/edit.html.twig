@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TabCA{% endblock %}
+
+{% block body %}
+<br><br><br>
+<hr>
+<h1 style="text-align:center">الــمــصــادقــة عــلى الــصــفقـات ذات الإجراءات المبسطة</h1>
+    <div class="container" style="margin-left:50%">
+
+
+    {{ include('tab_ca_simple/_form.html.twig', {'button_label': 'Update'}) }}
+
+</div>
+
+
+
+    {{ include('tab_ca_simple/_delete_form.html.twig') }}
+{% endblock %}
+

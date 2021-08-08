@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}الدعوة{% endblock %}
+
+{% block body %}
+<style>
+  #titre1{
+            text-align: center;
+        }
+</style>
+    <h1 id="titre1">الدعوة</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>عدد</th>
+                <th>اليوم</th>
+                <th>التوقيت</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for invitation in invitations %}
+            <tr>
+                <td>{{ invitation.id }}</td>
+                <td>{{ invitation.numero }}</td>
+                <td>{{ invitation.date1 }}</td>
+                <td>{{ invitation.heure }}</td>
+                <td>
+                    <a href="{{ path('invitation_show', {'id': invitation.id}) }}">=></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('invitation_new',{'id' :id}) }}">إضافة</a>
+{% endblock %}

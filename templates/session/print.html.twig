@@ -1,0 +1,235 @@
+
+{% block body %}
+<style>
+body{
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+  background-attachment: fixed;
+}
+table{
+ text-align:right;
+       width:100%;
+       background-color :white;
+           
+            font-size: 15px;
+            letter-spacing: normal;
+            justify-content: right;
+            
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+thead{
+   text-align:right;
+       width:100%;
+       
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            
+}
+
+</style>
+<br><br>
+<div class="container"> 
+ <div class="container d-flex align-items-center justify-content-between">
+    <h1 style="text-align:center">إدارة كتابة لجان الصفقات ومراقبة المصاريف  مصلحة كتابة اللجنة الداخلية للصفقات </h1>
+</div> <hr><br><br><br>
+    <table class="table table-bordered">
+        <thead>
+        <tr class="table-danger">
+         <th>تاريخ مصادقة مجلس الإدارة </th>
+                <th>ملاحظات مجلس الإدارة</th>
+                <th>تاريخ إبرام الصفقة</th>
+                <th>عدد العقد</th>
+                <th>تاريخ اعلام المرصد</th>
+         <th>عدد الأقساط</th>
+   
+                <th>طريقة الإبرام</th>
+                <th></th>
+                
+        </tr>
+        </thead>
+        <tbody>
+        {% for session in sessions %}
+            <tr>
+            <td>{{ session.notesconseil }}</td>
+                    <td>{{ session.dateconclusiontransaction ? session.dateconclusiontransaction|date('Y-m-d') : '' }}</td>
+                    <td>{{ session.nombrecontrat }}</td>
+                    <td>{{ session.datedebutaccomplissement ? session.datedebutaccomplissement|date('Y-m-d') : '' }}</td>
+                    <td>{{ session.datenotificationobservatoire ? session.datenotificationobservatoire|date('Y-m-d') : '' }}</td>
+                   
+            <td>{{ session.nombreinstallation }}</td>
+           
+                    <td>{{ session.methodeconclusion }}</td>
+                    <td>{{ session.naturefinancement }}</td>
+                      <td>{{ session.id }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="25">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+
+</table><br><br>
+ <table class="table table-bordered">
+            <thead>
+
+            <tr class="table-danger">
+
+                <th>قسط عدد</th>
+                <th>مبلغ </th>
+                <th>fournisseur</th>
+                <th>ملاحضات</th>
+                <th></th>
+                
+               
+            </tr>
+            </thead>
+            <tbody>
+            {% for installation in installations %}
+                <tr>
+                 <td>{{ installation.numero }}</td>
+                    <td>{{ installation.montant }}</td>
+                     <td>{{ installation.fournisseur }}</td>
+                      <td>{{ installation.description }}</td>
+                     <td>{{ installation.session.id }}</td>
+                
+                    <td>
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+<br><br>
+<table class="table table-bordered">
+        <thead>
+        <tr class="table-danger">
+        
+                <th>طبيعة التمويل</th>
+                <th>طبيعة الصفقة</th>
+                <th>تاريخ تعهد اللجنة بالملف</th>
+                <th>ملاحظات اللجنة</th>
+        
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for session in sessions %}
+            <tr>
+           
+                    <td>{{ session.naturefinancement }}</td>
+                    <td>{{ session.natureaccord }}</td>
+                    <td>{{ session.dateentreprisdossierparcomite ? session.dateentreprisdossierparcomite|date('Y-m-d') : '' }}</td>
+                    <td>{{ session.notecomite }}</td>
+             
+                <td>{{ session.id }}</td>
+
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="25">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+
+</table>
+
+<br><br>
+<table class="table table-bordered">
+        <thead>
+        <tr class="table-danger">
+        
+                <th>طبيعة التمويل</th>
+                <th>طبيعة الصفقة</th>
+                <th>تاريخ تعهد اللجنة بالملف</th>
+                <th>ملاحظات اللجنة</th>
+        <th>صاحب الصفقة</th>
+                
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for session in sessions %}
+            <tr>
+           
+                    <td>{{ session.naturefinancement }}</td>
+                    <td>{{ session.natureaccord }}</td>
+                    <td>{{ session.dateentreprisdossierparcomite ? session.dateentreprisdossierparcomite|date('Y-m-d') : '' }}</td>
+                    <td>{{ session.notecomite }}</td>
+             <td>{{ session.proprietaireaccord }}</td>
+                   
+                <td>{{ session.id }}</td>
+
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="25">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+
+</table>
+
+<br><br>
+        <table class="table table-bordered">
+            <thead>
+
+            <tr class="table-danger">
+
+                <th>مدة الصفقة</th>
+                <th>تاريخ تقديري للختم</th>
+                <th>فترة الضمان</th>
+                <th>الوحدة المعنية</th>
+                <th>تاريخ بداية الانجاز</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for session in sessions %}
+                <tr>
+                    <td>{{ session.periodeaccord }}</td>
+                    <td>{{ session.dateestimeetimbre ? session.dateestimeetimbre|date('Y-m-d') : '' }}</td>
+                    <td>{{ session.periodegarantie }}</td>
+                    <td>{{ session.uniteconcerne }}</td>
+                    <td>{{ session.datedebutaccomplissement? session.dateestimeetimbre|date('Y-m-d') : '' }}</td>
+                    <td>{{ session.id }}</td>
+                    <td>
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+
+<br><br>
+ 
+
+    </table>
+
+    <br><br><br><br>
+    <footer>
+   
+    <hr>
+    <br><br>
+    <hr>
+    </footer>
+    </div>
+    {# <a href="{{ path('exportexcel') }}">Export</a> #}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TabCaFinal{% endblock %}
+
+{% block body %}
+    <h1>TabCaFinal</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tab_ca_final.id }}</td>
+            </tr>
+            <tr>
+                <th>Document</th>
+                <td>{{ tab_ca_final.document }}</td>
+            </tr>
+            <tr>
+                <th>ProprietaireAccord</th>
+                <td>{{ tab_ca_final.proprietaireAccord }}</td>
+            </tr>
+            <tr>
+                <th>MontantTransaction</th>
+                <td>{{ tab_ca_final.montantTransaction }}</td>
+            </tr>
+            <tr>
+                <th>ValiditeGarentiePresentation</th>
+                <td>{{ tab_ca_final.validiteGarentiePresentation }}</td>
+            </tr>
+            <tr>
+                <th>DateConfirmation</th>
+                <td>{{ tab_ca_final.dateConfirmation }}</td>
+            </tr>
+            <tr>
+                <th>AvisCommission</th>
+                <td>{{ tab_ca_final.avisCommission }}</td>
+            </tr>
+            <tr>
+                <th>AvisConseil</th>
+                <td>{{ tab_ca_final.avisConseil }}</td>
+            </tr>
+            <tr>
+                <th>BudgetAlloue</th>
+                <td>{{ tab_ca_final.budgetAlloue }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tab_ca_final_index') }}">back to list</a>
+
+    <a href="{{ path('tab_ca_final_edit', {'id': tab_ca_final.id}) }}">edit</a>
+
+    {{ include('tab_ca_final/_delete_form.html.twig') }}
+{% endblock %}

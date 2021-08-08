@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<body>
+<style>
+
+a{
+   text-align:right;
+       width:100%;
+       
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 30px;
+            letter-spacing: normal;
+            justify-content: right; 
+}
+body{
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image:url("/../images/banner.jpg");
+      
+  background-attachment: fixed;
+}
+
+</style>
+<br><br><br>
+
+<div class="container" style="margin-left:50%">
+<a href="{{ path('form5_trimestre1_index',{'id': id}) }}">الثلاثية الأولى </a>
+<br><br><br>
+<a href="{{ path('form5_trimestre2_index',{'id': id}) }}">الثلاثية الثانية</a>
+<br><br><br>
+<a href="{{ path('form5_trimestre3_index',{'id': id}) }}">الثلاثية الثالثة</a>
+<br><br><br>
+<a href="{{ path('form5_trimestre4_index',{'id': id}) }}"> الثلاثية الرابعة</a>
+</div>
+</body>
+{% endblock %}

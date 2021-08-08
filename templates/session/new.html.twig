@@ -1,0 +1,157 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session index{% endblock %}
+
+{% block body %}
+<br><br>
+  <style>
+  h1{
+      text-align:center;
+  }
+  </style>
+    <body >
+<h1>إدارة كتابة لجان الصفقات ومراقبة المصاريف </h1>
+<h1>مصلحة كتابة اللجنة الداخلية للصفقات</h1>
+<br><br><br> <hr>{{ form_start(form) }}
+<table class="table table-bordered">
+    <thead>
+    <tr class="bg-pink">
+        <th>تاريخ جلسة </th>
+        <th>عدد ملفات المعروضة</th>
+        <th>الملف</th>
+        <th>عدد طلب العروض</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ form_widget(form.datesession) }}</td>
+        <td>{{ form_widget(form.nombrefichieraffiches) }}</td>
+        <td>{{ form_widget(form.fichier) }}</td>
+        <td>{{ form_widget(form.nombredemandeproposition) }}</td>
+
+
+
+    </tr>
+
+
+    </tbody>
+</table>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr class="">
+
+            <th>صاحب الصفقة</th>
+            <th>تاريخ الإعلان عن المنافسة</th>
+            <th>المبلغ</th>
+            <th>عدد الأقساط</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ form_widget(form.proprietaireaccord) }}</td>
+            <td>{{ form_widget(form.dateannonceconcours) }}</td>
+
+            <td>{{ form_widget(form.montant) }}</td>
+            <td>{{ form_widget(form.nombreinstallation) }}</td>
+
+
+        </tr>
+
+
+        </tbody>
+    </table>
+
+<table class="table table-bordered">
+    <thead>
+
+    <th>طريقة الإبرام</th>
+    <th>طبيعة التمويل</th>
+    <th>طبيعة الصفقة</th>
+    <th>تاريخ تعهد اللجنة بالملف</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ form_widget(form.methodeconclusion) }}</td>
+        <td>{{ form_widget(form.naturefinancement) }}</td>
+        <td>{{ form_widget(form.natureaccord) }}</td>
+        <td>{{ form_widget(form.dateentreprisdossierparcomite) }}</td>
+    </tr>
+    </tbody>
+</table>
+
+    <table class="table table-bordered">
+        <thead>
+        <th >ملاحظات اللجنة</th>
+        <th>تاريخ مصادقة مجلس الإدارة </th>
+        <th>ملاحظات مجلس الإدارة</th>
+        <th>تاريخ إبرام الصفقة</th>
+        <th>عدد العقد</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ form_widget(form.notecomite) }}</td>
+            <td>{{ form_widget(form.dateapprobationparconseiladministration) }} </td>
+            <td>{{ form_widget(form.notesconseil) }}</td>
+            <td>{{ form_widget(form.dateconclusiontransaction) }}</td>
+            <td>{{ form_widget(form.nombrecontrat) }}</td>
+            <td>{{ form_widget(form.notecomite) }}</td>
+
+        </tr>
+
+        </tbody>
+    </table>
+
+<table class="table table-bordered">
+    <thead>
+
+    <th>تاريخ اعلام المرصد</th>
+    <th>مدة الصفقة</th>
+    <th>تاريخ تقديري للختم</th>
+    <th>فترة الضمان</th>
+
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ form_widget(form.datenotificationobservatoire) }}</td>
+        <td>{{ form_widget(form.periodeaccord) }}</td>
+        <td>{{ form_widget(form.dateestimeetimbre) }}</td>
+        <td>{{ form_widget(form.periodegarantie) }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+    <table class="table table-bordered">
+        <thead>
+
+
+        <th>الوحدة المعنية</th>
+        <th>تاريخ بداية الانجاز</th>
+        </thead>
+        <tbody>
+        <tr>
+
+                <td>  <div class="col-md-12">{{ form_widget(form.uniteconcerne) }}</div></td>
+
+            <td>{{ form_widget(form.datedebutaccomplissement) }}</td>
+
+        </tr>
+        <tr>
+        </tr>
+        </tbody>
+    </table>
+
+<button class="btn btn-secondary btn-lg btn-block"> إدخال المعلومات</button> <hr><hr><hr>
+            {{ form_end(form) }}
+
+    </body>
+            {% endblock %}

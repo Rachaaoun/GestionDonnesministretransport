@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TabCA{% endblock %}
+
+{% block body %}
+    <h1>TabCA</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tab_c_a.id }}</td>
+            </tr>
+            <tr>
+                <th>Document</th>
+                <td>{{ tab_c_a.document }}</td>
+            </tr>
+            <tr>
+                <th>ProprietaireAccord</th>
+                <td>{{ tab_c_a.proprietaireAccord }}</td>
+            </tr>
+            <tr>
+                <th>MontantTransaction</th>
+                <td>{{ tab_c_a.montantTransaction }}</td>
+            </tr>
+            <tr>
+                <th>ValiditeGarentiePresentation</th>
+                <td>{{ tab_c_a.validiteGarentiePresentation }}</td>
+            </tr>
+            <tr>
+                <th>DateConfirmation</th>
+                <td>{{ tab_c_a.dateConfirmation }}</td>
+            </tr>
+            <tr>
+                <th>AvisCommission</th>
+                <td>{{ tab_c_a.avisCommission }}</td>
+            </tr>
+            <tr>
+                <th>AvisConseil</th>
+                <td>{{ tab_c_a.avisConseil }}</td>
+            </tr>
+            <tr>
+                <th>BudgetAlloue</th>
+                <td>{{ tab_c_a.budgetAlloue }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tab_c_a_index') }}">back to list</a>
+
+    <a href="{{ path('tab_c_a_edit', {'id': tab_c_a.id}) }}">edit</a>
+
+    {{ include('tab_c_a/_delete_form.html.twig') }}
+{% endblock %}

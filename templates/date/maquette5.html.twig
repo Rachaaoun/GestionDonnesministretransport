@@ -1,0 +1,55 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+     <style>
+#annee1{
+    margin-left:70%;
+     
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 40px;
+            letter-spacing: normal;
+            justify-content: right; 
+}   
+body{
+      background-repeat: no-repeat;
+      background-position:right;
+      background-size: 50%;
+      background-image:url("../assets/img/portfolio/portfolio-3.jpg");
+      
+  background-attachment: fixed;
+}
+
+        a{
+            color: black;
+             font-size: 30px;
+        }
+    </style>
+    <table class="table">
+        <thead>
+            <tr>
+<th></th><th></th>
+                <th>إختر العام</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for date in dates %}
+            <tr>
+                <td></td><td></td>
+
+                <td> <a href="{{ path('maquette5_index',{'id': date.id}) }}">{{ date.annee }}</a></td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('date_new') }}">إضافة عام جديد</a>
+{% endblock %}

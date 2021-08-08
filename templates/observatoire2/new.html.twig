@@ -1,0 +1,307 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+#titre1{
+    text-align :right;
+            align-content: space-between;
+            word-spacing: 10px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 20px;
+            font-family: "Times New Roman";
+}
+
+#titre2{
+    text-align :center;
+            align-content: space-between;
+            word-spacing: 10px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 20px;
+            font-family: "Times New Roman";
+}
+
+
+#soustitre1,#choix1{
+    text-align :right;
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 10px;
+            font-family: "Times New Roman";
+}
+td,th,tr /* Toutes les cellules des tableaux... */
+{
+    
+   text-align:right;
+
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            
+            font-family: "Times New Roman";
+    border: 1px solid black; /* auront une bordure de 1px */
+}
+table{
+      text-align :right;
+            
+}
+input{
+    border-color:transparent;
+}
+</style>
+
+
+<div class="container">
+  {{ form_start(form)}}
+<h3 id="titre1">الجمهورية التونسية
+<br>رئاسة الحكومة
+</h3>
+<br><br>
+<h2 id="titre2">نموذج الملحق عدد 2
+بطاقة بيانات إسناد صفقات عمومية
+السنة : {{annee}}
+</h3><br><br>
+
+<h5 id="soustitre1">المشتري العمومي : شركة النقل بتونس</h5>
+<h5 id="soustitre1">إسم المسؤول عن خلية الصفقات العمومية ولقبه : السيد محمد شوقي العبيدي</h5>
+<h5 id="soustitre1">الهاتف: 71904858 الفاكس:   العنوان الإلكتروني </h5>
+
+<p id="soustitre1">  طبيعة الصفقة  :   
+
+  {{ form_widget(form.check1)}}أشغال
+
+ {{ form_widget(form.check2)}}  دراسة
+
+ {{ form_widget(form.check3)}}  تزود بمواد
+</p>
+<p id="soustitre1">    
+
+ {{ form_widget(form.check4)}}تزود بخدمات 
+
+ {{ form_widget(form.check5)}}  البرمجيات والخدمات الإعلامية  
+
+</p>
+<p id="soustitre1">    
+
+ {{ form_widget(form.check6)}} تزوّد بمعدّات إعلامية 
+
+ {{ form_widget(form.check7)}}   دراسة في مجال الإعلامية وتكنولوجيات الإتّصال   
+
+</p>
+
+<p id="soustitre1">الموضوع: أشغال الهندسة المدنية لصيانة الشبكة الحديدية و المباني و المستودعات  </p>
+<p id="soustitre1">    
+
+ {{ form_widget(form.check8)}}  صفقة غير مخصصة لفائدة المؤسسات الصغرى   
+
+ {{ form_widget(form.check9)}}   صفقة لفائدة المؤسسات الصغرى   
+
+</p>
+
+<p id="soustitre1">  {{ form_widget(form.text1)}}المبلغ (بالدينار) : 1.499.340.500 (   المبلغ الأقصى ) التمويل(1): ميزانية </p>
+<p id="soustitre1">عدد الأقساط إن وجدت  {{ form_widget(form.text2)}}    طريقة الإبرام(2) : طلب عروض مفتوح (صفقة إطارية)    </p>
+<p id="soustitre1"> صاحب الصفقة :      {{ form_widget(form.text3)}}           جنسيته : تونسية. </p>
+<P id="soustitre1">تصنيف صاحب الصفقة (بالنسبة للبيانات والأشغال العمومية) </p>
+<p id="soustitre1">{{ form_widget(form.text4)}}: النشاط*</p> 
+<p id="soustitre1">{{ form_widget(form.text5)}}: الإختصاص*</p> 
+<p id="soustitre1">{{ form_widget(form.text6)}}: الصنف *</p> <br>
+<h4 id="soustitre1"> : معلومات حول الآجال  - </h4>
+
+<table >
+<tr>
+<td> {{ form_widget(form.tab1)}}  </td>
+
+<td> {{ form_widget(form.tab2)}}    </td>
+
+<td> {{ form_widget(form.tab3)}}   </td>
+<th > :  تاريخ الإعلان عن المنافسة</th>
+</tr>
+
+<tr>
+<td> {{ form_widget(form.tab4)}}  </td>
+<td> {{ form_widget(form.tab5)}}  </td>
+<td rowspan="2">{{ form_widget(form.tab6)}}  </td>
+<th rowspan="2" style="width:100px">  آخر أجل لقبول العروض االفنية: (اليوم والساعة)</th>
+
+</tr>
+<tr>
+<td colspan="1"> {{ form_widget(form.tab7)}}    </td>
+
+<td colspan="1"> {{ form_widget(form.tab8)}}    </td>
+</tr>
+
+<tr>
+<td ></td>
+<td ></td>
+<td>{{ form_widget(form.tab9)}}  </td>
+<th style="width:100px" >تاريخ وساعة فتح العروض</th>
+</tr>
+<tr>
+<th></th>
+<th></th>
+<th>{{ form_widget(form.tab10)}}  </th>
+<th>تاريخ تعهد لجنة مراقبة الصفقات بالملف</th>
+</tr>
+<tr>
+<th></th>
+<th></th>
+<th>{{ form_widget(form.tab11)}}  </th>
+<th>تاريخ إبداء رأي لجنة مراقبة الصفقات</th>
+</tr>
+
+</table>
+
+
+<br><br><br>
+<h4 id="soustitre1">معلومات حول المنافسة (كل قسط على حدة)-</h4>
+
+<table>
+<tr>
+<th>عدد العروض المقصاة من قبل لجنة تقييم العروض</th>
+<th>عدد العروض المقصاة من قبل لجنة فتح العروض</th>
+<th>عدد العروض المقصاة من قبل لجنة فتح العروض</th>
+<th>عدد ساحبي كراسات الشروط</th>
+</tr>
+<tr>
+<th>{{ form_widget(form.tabdeux1)}}  </th>
+<th>{{ form_widget(form.tabdeux2)}}</th>
+<th>{{ form_widget(form.tabdeux3)}}</th>
+<th>{{ form_widget(form.tabdeux4)}}</th>
+</tr>
+
+</table><br>
+<p id="soustitre1"> {{ form_widget(form.text7)}}(1) ميزانية أو هبة أو قرض من قبل </p>
+<p id="soustitre1">(2) طلب عروض مفتوح أو مسبوق بانتقاء أو مع مناظرة او طلب عروض على مرحلتين أو إستشارة موسعة أو تفاوض مباشر.</p>
+
+
+<br>
+<h5 id="soustitre1"> معلومات حول تقييم العروض</h5>
+
+<p id="soustitre1">    
+
+{{ form_widget(form.check10)}} تقييم على أساس العرض الأقل ثمنا
+
+{{ form_widget(form.check11)}}    تقييم على أساس الموازنة بين الكلفة والجودة    
+
+</p>
+<p id="soustitre1">    
+
+{{ form_widget(form.check12)}} تقييم على أساس الجودة 
+   
+
+</p>
+<p id="soustitre1">تقييم على أساس العرض الأقل ثمنا (كل قسط على حدة)</p>
+
+<table style="margin-left:40%">
+<tr>
+<td>معايير المطابقة</td>
+<td>عدد العروض المطابقة</td>
+</tr>
+<tr>
+<td>{{ form_widget(form.tabtrois1)}}</td>
+<td>{{ form_widget(form.tabtrois2)}}</td>
+</tr>
+<tr>
+<td>{{ form_widget(form.tabtrois3)}}</td>
+<td>{{ form_widget(form.tabtrois4)}}</td>
+</tr>
+<tr>
+<td>{{ form_widget(form.tabtrois5)}}</td>
+<td>{{ form_widget(form.tabtrois6)}}</td>
+</tr>
+</table>
+<br>
+<p id="soustitre1">تقييم على أساس الموازنة بين الكلفة والجودة (كل قسط على حدة)</p>
+
+<table style="margin-left:40%">
+<tr>
+<td>الأهمية النسبية لكل معيار</td>
+<td>المعايير المعتمدة للفرز الفني</td>
+</tr>
+<tr>
+<td>{{ form_widget(form.tabquatre1)}}</td>
+<td>{{ form_widget(form.tabquatre2)}}</td>
+</tr>
+<tr>
+<td>{{ form_widget(form.tabquatre3)}}</td>
+<td>{{ form_widget(form.tabquatre4)}}</td>
+</tr>
+<tr>
+<td>{{ form_widget(form.tabquatre5)}}</td>
+<td>{{ form_widget(form.tabquatre6)}}</td>
+</tr>
+</table>
+
+<table style="margin-left:10%">
+<tr>
+<td><p>الموازنة بين العدد الفني والعدد المالي</p>
+<p>{{ form_widget(form.tabcinq1)}}العدد الفني</p>
+<p>{{ form_widget(form.tabcinq2)}}العدد المالي</p></td>
+</tr>
+</table>
+<h5 id="soustitre1">الأسعار(بالدينارالتونسي)</h5>
+<p id="soustitre1">    
+<b>طبيعة الأسعار</b>
+{{ form_widget(form.check13)}} أسعار ثابتة       
+
+{{ form_widget(form.check14)}}   أسعار قابلة للمراجعة      
+
+</p>
+
+<p id="soustitre1">    
+<b>صيغة الأسعار</b>
+{{ form_widget(form.check15)}}أسعار فردية            
+
+{{ form_widget(form.check16)}}   أسعار جزافية       
+
+</p>
+
+<p id="soustitre1"><b>تقديرات المشتري العمومي: الأقصى   1.500.000.000 دينار</b></p>
+
+
+<table style="margin-right:20%">
+<tr>
+<td>العرض الخامس</td>
+<td>العرض الرابع</td>
+<td>العرض الثالث</td>
+<td>العرض الثاني</td>
+<td>العرض الأول </td>
+</tr>
+
+<tr>
+<td>{{ form_widget(form.tabsix1)}}</td>
+<td>{{ form_widget(form.tabsix2)}}</td>
+<td>{{ form_widget(form.tabsix3)}}</td>
+<td>{{ form_widget(form.tabsix4)}}</td>
+<td>{{ form_widget(form.tabsix5)}}</td>
+</tr>
+</table>
+<br><br>
+<p id="soustitre1"><b>ذكر الملاحظات أو الإشكاليات التي طرحها إبرام هذه الصفقة من حيث : كثافة المنافسة –آجال المصادقة على الصفقة –سهولة أو صعوبة تطبيق المقاييس-مستوى الأسعار مقارنة بصفقات سابقة أو بالتقديرات - إلخ</b></p>
+<p id="soustitre1">
+{{ form_widget(form.conclusion)}}</p>
+<p id="soustitre1">
+{{ form_widget(form.conclusion1)}}</p>
+<p id="soustitre1">
+{{ form_widget(form.conclusion2)}}</p>
+<p id="soustitre1">
+{{ form_widget(form.conclusion3)}}</p>
+
+<br><br><br>
+<h4><b>مدير إدارة لجان الصفقات</b></h4>
+<h4><b>ومراقبة المصاريف </b></h4>
+<p><b> {{ form_widget(form.varfinal)}}</b></p>
+
+    <button class="btn">{{ button_label|default('....') }}</button>
+  {{ form_end(form)}}
+</div>
+
+{% endblock %}

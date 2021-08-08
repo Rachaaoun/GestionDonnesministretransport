@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TabCA index{% endblock %}
+
+{% block body %}
+
+<style>
+  h2{
+            text-align: center;
+        }
+        h4{
+            
+            text-align: right;
+        }
+</style>
+<h4>شـركـة النقـل بتـونس</h4>
+<h4>إدارة كتابة لجان الصفقات ومراقبة المصاريف </h4>
+<h4> 
+مصلحة كتابة اللجنة الداخلية للصفقات
+</h4><br><br>
+    <h2 
+    >
+الــمــصــادقــة عــلى الــصــفقـات ذات الإجراءات العادية</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+               
+                
+           
+                
+                <th></th>
+                
+                <th>رأي مجلس الإدارة</th>
+                <th>رأي اللـجـنـة الداخلية لمراقبة الـصـفـقـات</th>
+                <th>تـاريخ
+                    الجلـسة
+                </th>
+                         <th>صلوحية الضمان والعرض</th>
+                <th>الميزانية
+                    المرصودة
+                    </th>
+                <th>المبلغ</th>
+                <th>صـاحب الصـفقـة</th>
+                 <th>الــمــلــف</th>
+                 <th>عدد</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for tab_c_a in tab_c_as %}
+            <tr>
+              
+           
+               
+                <td>
+                    <a href="{{ path('tab_c_a_edit', {'id': tab_c_a.id}) }}">تغيير</a>
+                </td>
+                
+                
+                
+                <td>{{ tab_c_a.avisConseil }}</td>
+                <td>{{ tab_c_a.avisCommission }}</td>
+                <td>{{ tab_c_a.dateConfirmation }}</td>
+                 <td>{{ tab_c_a.validiteGarentiePresentation }}</td>
+                <td>{{ tab_c_a.budgetAlloue }}</td>
+                <td>{{ tab_c_a.montantTransaction }}</td>
+                <td>{{ tab_c_a.proprietaireAccord }}</td>
+                
+                       <td>{{ tab_c_a.document }}</td>
+                  <td>{{ tab_c_a.id }}</td>
+                       
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('tab_c_a_new',{'id': date.id}) }}" class="btn btn-dark">إضافة</a>
+   
+{% endblock %}

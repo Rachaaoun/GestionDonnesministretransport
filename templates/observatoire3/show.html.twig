@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+#titre1{
+    text-align :right;
+            align-content: space-between;
+            word-spacing: 10px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 20px;
+            font-family: "Times New Roman";
+}
+
+#titre2{
+    text-align :center;
+            align-content: space-between;
+            word-spacing: 10px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 20px;
+            font-family: "Times New Roman";
+}
+
+
+#soustitre1,#choix1{
+    text-align :right;
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 10px;
+            font-family: "Times New Roman";
+}
+
+#soustitre2{
+    text-align :right;
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 15px;
+            letter-spacing: normal;
+            justify-content: right;
+            tab-size: 10px;
+            font-family: "Times New Roman";
+}
+td,th,tr /* Toutes les cellules des tableaux... */
+{
+    
+   text-align:right;
+
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 20px;
+            letter-spacing: normal;
+            justify-content: right;
+            
+            font-family: "Times New Roman";
+    border: 1px solid black; /* auront une bordure de 1px */
+}
+table{
+      text-align :right;
+            
+}
+input{
+    border-color:transparent;
+}
+</style>
+
+
+<div class="container">
+
+<h3 id="titre1">الجمهورية التونسية
+<br>رئاسة الحكومة
+</h3>
+<br><br>
+<h2 id="titre2">نموذج الملحق عدد 3
+ﺑﻄﺎﻗﺔ ﺑﻴﺎﻧﺎت ﻓﺴﺦ ﺻﻔﻘﺔ ﻋﻤﻮﻣﻴﺔ
+
+</h3><br><br>   
+<h5 id="soustitre1">
+  {{ observatoire3.var1}}: اﻟﻤﺸﺘﺮي العمومي    </h5>
+<h5 id="soustitre1"> {{ observatoire3.var2}}  إسم المسؤول عن خلية الصفقات العمومية ولقبه</h5>
+<h5 id="soustitre1"> {{ observatoire3.var3}} الهاتف  </h5>
+<h5 id="soustitre1"> ﻣﻌﻠﻮﻣﺎت ﻋﺎﻣﺔ ﺣﻮل اﻟﺼﻔﻘﺔ -</h5>
+<h5 id="soustitre1"> {{ observatoire3.var4}} اﻟﻤﻮﺿﻮع  </h5>
+<h5 id="soustitre1"> {{ observatoire3.var5}} ﺻﺎﺣﺐ  اﻟﺼﻔﻘﺔ</h5>
+<h5 id="soustitre1"> {{ observatoire3.var6}} {{ observatoire3.var7}} المبلغ (بالدينار)  </h5> 
+
+<h5 id="soustitre1"> {{ observatoire3.var8}} ﻃﺮﻳﻘﺔ اﻹﺑﺮام (1)  </h5>
+
+<h5 id="soustitre1"> {{ observatoire3.var9}} ﻃﺮﻳﻘﺔ اﻟﺘﻤﻮﻳﻞ </h5>
+
+<h5 id="soustitre1"> {{ observatoire3.var10}} (2) ﺗﺎرﻳﺦ اﻹﺑﺮام </h5>
+
+<h5 id="soustitre1"> {{ observatoire3.var11}} : ﻗﺮار اﻟﻔﺴﺦ -</h5>
+
+<h5 id="soustitre1">{{ observatoire3.var12}} اﻟﺘﺎرﻳﺦ </h5>
+<h5 id="soustitre1"> {{ observatoire3.var13}} اﻟﺴﺒﺐ </h5>
+
+<h5 id="soustitre1"> {{ observatoire3.var14}} ﺗﺎرﻳﺦ ﺑﺪاﻳﺔ اﻹﻧﺠﺎز</h5>
+<h5 id="soustitre1"> {{ observatoire3.var15}} أﺟﻞ اﻹﻧﺠﺎز</h5>
+<h5 id="soustitre1"> {{ observatoire3.var16}} ﻧﺴﺒﺔ ﺗﻘﺪم اﻹﻧﺠﺎز</h5>
+<h5 id="soustitre1"> {{ observatoire3.var17}}  ﺛﻤﻦ اﻟﺨﺪﻣﺎت اﻟﻤﻨﺠﺰة اﻟﺘﻲ ﺗﻢ ﺧﻼﺻﻬﺎ (ﺑﺎﻟﺪﻳﻨﺎر) </h5>
+<h5 id="soustitre1"> {{ observatoire3.var18}} ﺛﻤﻦ اﻟﺨﺪﻣﺎت اﻟﻤﻨﺠﺰة اﻟﺘﻲ ﻟﻢ ﻳﺘﻢ ﺧﻼﺻﻬﺎ (ﺑﺎﻟﺪﻳﻨﺎر) </h5>
+<h5 id="soustitre1"> {{ observatoire3.var19}}  اﻟﻀﻤﺎن اﻟﻨﻬﺎﺋﻲ </h5>
+<h5 id="soustitre1"> {{ observatoire3.var20}}  اﻟﺤﺠﺰ ﺑﻌﻨﻮان اﻟﻀﻤﺎن(3) </h5> 
+<h5 id="soustitre1">{{ observatoire3.var21}}    كيفية مواصلة إنجاز الصفقة  </h5>
+
+<br><br><br>
+<h4><b>مدير إدارة لجان الصفقات</b></h4>
+<h4><b>ومراقبة المصاريف </b></h4>
+<p><b> {{ observatoire3.var22}} </b></p>
+
+<br><br>
+<p id="soustitre2">(1) طلب عروض مفتوح أو مضيق أو مع مناظرة أو على مرحلتين أو تفاوض مباشر</p>
+<p id="soustitre2">{{ observatoire3.var23}}  (2) ميزانية، هبة أو قرض من قبل</p>
+<p id="soustitre2">(3) عند الاقتضاء</p>
+
+<h5 id="soustitre1">{{ observatoire3.var24}}   اﻟﻤﺸﺘﺮي العمومي  </h5>
+
+{% endblock %}

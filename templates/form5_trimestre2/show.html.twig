@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Form5Trimestre2{% endblock %}
+
+{% block body %}
+    <h1>Form5Trimestre2</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ form5_trimestre2.id }}</td>
+            </tr>
+            <tr>
+                <th>Classementdemande</th>
+                <td>{{ form5_trimestre2.classementdemande }}</td>
+            </tr>
+            <tr>
+                <th>Propositionrapportevaluation</th>
+                <td>{{ form5_trimestre2.propositionrapportevaluation }}</td>
+            </tr>
+            <tr>
+                <th>Nombrerapportpreselection</th>
+                <td>{{ form5_trimestre2.nombrerapportpreselection }}</td>
+            </tr>
+            <tr>
+                <th>Accordnegociationdirecte</th>
+                <td>{{ form5_trimestre2.accordnegociationdirecte }}</td>
+            </tr>
+            <tr>
+                <th>Projetsupplements</th>
+                <td>{{ form5_trimestre2.projetsupplements }}</td>
+            </tr>
+            <tr>
+                <th>Nombreprojetfinaux</th>
+                <td>{{ form5_trimestre2.nombreprojetfinaux }}</td>
+            </tr>
+            <tr>
+                <th>Totalrapport</th>
+                <td>{{ form5_trimestre2.totalrapport }}</td>
+            </tr>
+            <tr>
+                <th>Nombrerapport</th>
+                <td>{{ form5_trimestre2.nombrerapport }}</td>
+            </tr>
+            <tr>
+                <th>Totalaccord</th>
+                <td>{{ form5_trimestre2.totalaccord }}</td>
+            </tr>
+            <tr>
+                <th>Nombreaccord</th>
+                <td>{{ form5_trimestre2.nombreaccord }}</td>
+            </tr>
+            <tr>
+                <th>Totalprojet</th>
+                <td>{{ form5_trimestre2.totalprojet }}</td>
+            </tr>
+            <tr>
+                <th>Nombreprojet</th>
+                <td>{{ form5_trimestre2.nombreprojet }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('form5_trimestre2_index') }}">back to list</a>
+
+    <a href="{{ path('form5_trimestre2_edit', {'id': form5_trimestre2.id}) }}">edit</a>
+
+    {{ include('form5_trimestre2/_delete_form.html.twig') }}
+{% endblock %}

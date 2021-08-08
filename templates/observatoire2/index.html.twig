@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}نموذج الملحق عدد 2{% endblock %}
+
+{% block body %}
+    <h1 style="text-align:center">نموذج الملحق عدد 2</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+               
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for observatoire2 in observatoire2s %}
+            <tr>
+                <td>{{ observatoire2.id }}</td>
+                
+                <td>
+                    <a href="{{ path('observatoire2_show', {'id': observatoire2.id}) }}">=></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="60"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('observatoire2_new', {'id': id}) }}">إضافة</a>
+{% endblock %}

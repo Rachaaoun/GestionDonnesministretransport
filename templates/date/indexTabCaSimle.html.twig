@@ -1,0 +1,36 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        a{
+            color: black;
+        }
+    </style>
+    <table class="table">
+        <thead>
+            <tr>
+<th></th><th></th>
+                <th>إختر العام</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for date in dates %}
+            <tr>
+                <td></td><td></td>
+
+                <td> <a href="{{ path('tab_ca_simple_index',{'id': date.id}) }}">{{ date.annee }}</a></td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('date_new') }}">إضافة عام جديد</a>
+{% endblock %}

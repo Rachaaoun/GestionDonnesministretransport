@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session{% endblock %}
+
+{% block body %}
+    <h1>Session</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ session.id }}</td>
+            </tr>
+            <tr>
+                <th>Datesession</th>
+                <td>{{ session.datesession ? session.datesession|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nombrefichieraffiches</th>
+                <td>{{ session.nombrefichieraffiches }}</td>
+            </tr>
+            <tr>
+                <th>Fichier</th>
+                <td>{{ session.fichier }}</td>
+            </tr>
+            <tr>
+                <th>Nombredemandeproposition</th>
+                <td>{{ session.nombredemandeproposition }}</td>
+            </tr>
+            <tr>
+                <th>Proprietaireaccord</th>
+                <td>{{ session.proprietaireaccord }}</td>
+            </tr>
+            <tr>
+                <th>Dateannonceconcours</th>
+                <td>{{ session.dateannonceconcours ? session.dateannonceconcours|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ session.montant }}</td>
+            </tr>
+            <tr>
+                <th>Nombreinstallation</th>
+                <td>{{ session.nombreinstallation }}</td>
+            </tr>
+            <tr>
+                <th>Methodeconclusion</th>
+                <td>{{ session.methodeconclusion }}</td>
+            </tr>
+            <tr>
+                <th>Naturefinancement</th>
+                <td>{{ session.naturefinancement }}</td>
+            </tr>
+            <tr>
+                <th>Natureaccord</th>
+                <td>{{ session.natureaccord }}</td>
+            </tr>
+            <tr>
+                <th>Dateentreprisdossierparcomite</th>
+                <td>{{ session.dateentreprisdossierparcomite ? session.dateentreprisdossierparcomite|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Notecomite</th>
+                <td>{{ session.notecomite }}</td>
+            </tr>
+            <tr>
+                <th>Dateapprobationparconseiladministration</th>
+                <td>{{ session.dateapprobationparconseiladministration ? session.dateapprobationparconseiladministration|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Notesconseil</th>
+                <td>{{ session.notesconseil }}</td>
+            </tr>
+            <tr>
+                <th>Dateconclusiontransaction</th>
+                <td>{{ session.dateconclusiontransaction ? session.dateconclusiontransaction|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nombrecontrat</th>
+                <td>{{ session.nombrecontrat }}</td>
+            </tr>
+            <tr>
+                <th>Datedebutaccomplissement</th>
+                <td>{{ session.datedebutaccomplissement ? session.datedebutaccomplissement|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datenotificationobservatoire</th>
+                <td>{{ session.datenotificationobservatoire ? session.datenotificationobservatoire|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Periodeaccord</th>
+                <td>{{ session.periodeaccord }}</td>
+            </tr>
+            <tr>
+                <th>Dateestimeetimbre</th>
+                <td>{{ session.dateestimeetimbre ? session.dateestimeetimbre|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Periodegarantie</th>
+                <td>{{ session.periodegarantie }}</td>
+            </tr>
+            <tr>
+                <th>Uniteconcerne</th>
+                <td>{{ session.uniteconcerne }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('session_index') }}">back to list</a>
+
+    <a href="{{ path('session_edit', {'id': session.id}) }}">edit</a>
+
+    {{ include('session/_delete_form.html.twig') }}
+{% endblock %}

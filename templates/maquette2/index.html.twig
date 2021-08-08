@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}2 نموذج الملحق عدد {% endblock %}
+
+{% block body %}
+      <style>
+#annee1{
+    margin-left:70%;
+     
+            align-content: space-between;
+            word-spacing: 5px;
+            font-size: 40px;
+            letter-spacing: normal;
+            justify-content: right; 
+}   
+body{
+      background-repeat: no-repeat;
+      background-position:right;
+      background-size: 50%;
+      background-image:url("../assets/img/portfolio/portfolio-3.jpg");
+      
+  background-attachment: fixed;
+}
+
+        a{
+            color: black;
+             font-size: 30px;
+        }
+    </style>
+    <h1>2نموذج الملحق عدد </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>اليوم</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for maquette2 in maquette2s %}
+            <tr>
+                <td>{{ maquette2.id }}</td>
+                <td>{{ maquette2.date1 }}</td>
+                <td>
+                    <a href="{{ path('maquette2_show', {'id': maquette2.id}) }}">=></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('maquette2_new',{'id':id}) }}">إضافة</a>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CommissionFinal{% endblock %}
+
+{% block body %}
+    <h1>CommissionFinal</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ commission_final.id }}</td>
+            </tr>
+            <tr>
+                <th>Var1</th>
+                <td>{{ commission_final.var1 }}</td>
+            </tr>
+            <tr>
+                <th>Var2</th>
+                <td>{{ commission_final.var2 }}</td>
+            </tr>
+            <tr>
+                <th>Var3</th>
+                <td>{{ commission_final.var3 }}</td>
+            </tr>
+            <tr>
+                <th>Var4</th>
+                <td>{{ commission_final.var4 }}</td>
+            </tr>
+            <tr>
+                <th>Var5</th>
+                <td>{{ commission_final.var5 }}</td>
+            </tr>
+            <tr>
+                <th>Var6</th>
+                <td>{{ commission_final.var6 }}</td>
+            </tr>
+            <tr>
+                <th>Var7</th>
+                <td>{{ commission_final.var7 }}</td>
+            </tr>
+            <tr>
+                <th>Var8</th>
+                <td>{{ commission_final.var8 }}</td>
+            </tr>
+            <tr>
+                <th>Var9</th>
+                <td>{{ commission_final.var9 }}</td>
+            </tr>
+            <tr>
+                <th>Var10</th>
+                <td>{{ commission_final.var10 }}</td>
+            </tr>
+            <tr>
+                <th>Var11</th>
+                <td>{{ commission_final.var11 }}</td>
+            </tr>
+            <tr>
+                <th>Var12</th>
+                <td>{{ commission_final.var12 }}</td>
+            </tr>
+            <tr>
+                <th>Var13</th>
+                <td>{{ commission_final.var13 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('commission_final_index') }}">back to list</a>
+
+    <a href="{{ path('commission_final_edit', {'id': commission_final.id}) }}">edit</a>
+
+    {{ include('commission_final/_delete_form.html.twig') }}
+{% endblock %}

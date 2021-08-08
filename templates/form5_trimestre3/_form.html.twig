@@ -1,0 +1,49 @@
+
+
+<table class="table" border=" 4px solid">
+    <thead>
+    <tr>
+        <td rowspan="2">عدد مشاريع الختم النهائي</td>
+        <td colspan="2">مشاريع ملاحق الصفقات</td>
+        <td colspan="2">مشاريع الصفقات بالتفاوض المباشر</td>
+        <td rowspan="2">عدد تقارير الإنتقاء الأوّلي</td>
+        <td colspan="2">تقارير تقييم العروض</td>
+        <td rowspan="2">صنف الطلبات</td>
+
+    </tr>
+    <tr>
+        <td colspan="1">العدد</td>
+        <td colspan="1" >المبلغ الجملي(د)</td>
+        <td colspan="1">العدد</td>
+        <td colspan="1" >المبلغ الجملي(د)</td>
+        <td colspan="1">العدد</td>
+        <td colspan="1" >المبلغ الجملي(د)</td>
+    </tr>
+
+    </thead>
+    <tbody>
+
+    {{ form_start(form) }}
+
+    <td>{{ form_widget(form.nombreprojetfinaux) }}</td>
+
+
+
+
+    <td>{{ form_widget(form.totalprojet) }}</td>
+    <td>{{ form_widget(form.nombreprojet) }}</td>
+
+
+    <td>{{ form_widget(form.totalaccord) }}</td>
+    <td>{{ form_widget(form.nombreaccord) }}</td>
+    <td>{{ form_widget(form.nombrerapportpreselection )}}</td>
+    <td>{{ form_widget(form.totalrapport) }}</td>
+    <td>{{ form_widget(form.nombrerapport) }}</td>
+
+
+    <td>{{ form_widget(form.classementdemande) }}</td>
+
+    <button class="btn btn-primary">{{ button_label|default('موافقة الإضافة') }}</button> <br>
+    {{ form_end(form) }}
+    </tbody>
+</table>

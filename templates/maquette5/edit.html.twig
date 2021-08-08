@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Maquette5{% endblock %}
+
+{% block body %}
+    <h1>Edit Maquette5</h1>
+
+    {{ include('maquette5/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('maquette5_index') }}">back to list</a>
+
+    {{ include('maquette5/_delete_form.html.twig') }}
+{% endblock %}
